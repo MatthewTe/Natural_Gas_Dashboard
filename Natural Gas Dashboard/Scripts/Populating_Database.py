@@ -14,6 +14,15 @@ url = "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm"
 path = "C:\\Users\\Matthew Teelucksingh\\Desktop\\Projects\
  Repository\\Python Projects\\Natural Gas Dashboard\\Natural Gas Dashboard\\Database"
 
+"""
+MODULE NAME: nat_gas_populate():
+FUNCTION: Uses the requests and bs4 libraries to scrape the U.S. eia website for the
+href link to an .xls file containing the historical prices of natural gas. It then
+parses the href link and using the pandas library downloads and writes the data onto
+the local machine as a .csv file
+INPUT: path(str)
+OUTPUT: Downloads a .csv file
+"""
 def nat_gas_populate(path):
     page = requests.get(url)
     page.raise_for_status()
